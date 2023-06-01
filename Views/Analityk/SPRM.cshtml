@@ -1,0 +1,45 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.VStatystykaPrmZałóg>
+
+@{
+    ViewData["Title"] = "Statystyka PRM AZRM";
+}
+
+<h1>Statystka PRM Załóg w AZRM</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JednostkaChorobowa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LiczbaInterwencji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumerZałogi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SzpitalDocelowy)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                @Html.DisplayFor(modelitem => item.JednostkaChorobowa)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.LiczbaInterwencji)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.NumerZałogi)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.SzpitalDocelowy)
+            </th>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.VPracownicyWgdatyUzytoRezerwa>
+
+@{
+    ViewData["Title"] = "Wykorzystanie sił i środków";
+}
+
+<h1>Analiza użycia sił i środków</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DzieńPracy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LiczbaPracownikówNaDniu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NazwaStanowiska)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelitem => item.DzieńPracy)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelitem => item.LiczbaPracownikówNaDniu)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelitem => item.NazwaStanowiska)
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>

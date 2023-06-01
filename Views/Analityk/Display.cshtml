@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Analityk Panel";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth Project - AZRM2023v1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        #analityk {
+            position: absolute;
+            top: 100px;
+            height: 85%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"><img src="~/lib/Logo1.jpg" alt="Logo AZRM" width="80" height="90" style="vertical-align:sub;margin:px 0px;float:inherit"></a>
+                <a class="navbar-brand" href="#">AZRM2023v1</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="/Dashboard/Display">Dashboard</a></li>
+                @if (User.IsInRole("Analityk"))
+                {
+                    <li><a href="/Analityk/statICD10">statystka ICD-10</a></li>
+                    <li><a href="/Analityk/statPrac">statystka Pracy</a></li>
+                    <li><a href="/Analityk/kadra">statystyka Kadry</a></li>
+                }
+
+            </ul>
+        </div>
+    </nav>
+    <iframe id="analityk" width="1140" height="520" src="https://app.powerbi.com/reportEmbed?reportId=7957d1cd-b5c2-4987-b72e-57c16819e6aa&autoAuth=true&ctid=0fabc88a-2565-420d-9dfe-64f803897c56" frameborder="0" allowFullScreen="true"></iframe>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<AZRM2023v1.Models.Domain.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Lista Pracowników";
+}
+
+<h1>Lista pracowników w AZRM</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>         
+            <th>
+                @Html.DisplayNameFor(model => model.Rola)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rola)
+                </td>
+           
+                <td>
+                    <a asp-action="UpdatePracownik" asp-route-id="@item.Id" class="btn btn-info">Edytuj</a> 
+                    <a asp-action="DetailsPracownik" asp-route-id="@item.Id">Szczegóły</a>
+                    <a asp-action="RemovePracownik" asp-route-id="@item.Id" class="btn btn-danger">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

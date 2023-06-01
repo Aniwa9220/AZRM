@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.VIlPracyPracownika>
+
+@{
+    ViewData["Title"] = "ilość dni przepracowanych";
+}
+
+<h1>Przepracowano dni</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IlePracował)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pracownik)
+            </th>          
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelitem => item.Id)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelitem => item.IlePracował)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelitem => item.Pracownik)
+                </th>          
+            </tr>
+
+        }
+    </tbody>
+</table>

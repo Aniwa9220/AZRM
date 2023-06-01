@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.VListazgłoszeń>
+
+@{
+    ViewData["Title"] = "Lista Zgłoszeń";
+}
+
+<h1>Lista Zgłoszeń w AZRM</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataZgłoszenia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdSkładuPrm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdZgłoszenia)
+            </th>
+              <th>
+                @Html.DisplayNameFor(model => model.ImiePacjenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NazwiskoPacjenta)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                  <th>
+                @Html.DisplayFor(modelitem => item.DataZgłoszenia)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.IdSkładuPrm)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.IdZgłoszenia)
+            </th>
+              <th>
+                @Html.DisplayFor(modelitem => item.ImiePacjenta)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.NazwiskoPacjenta)
+            </th>
+            </tr>
+        }
+    </tbody>
+</table>

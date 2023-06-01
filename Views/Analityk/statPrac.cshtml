@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Statystyka Pracy";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth Project - AZRM2023v1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"><img src="~/lib/Logo1.jpg" alt="Logo AZRM" width="120" height="130" style="vertical-align:sub;margin:px 0px;float:inherit"></a>
+                <a class="navbar-brand" href="/Dashboard/Display">AZRM2023v1</a>
+            </div>
+            <ul class="nav navbar-nav">
+            
+                @if (User.IsInRole("Analityk"))
+                {
+                    
+                    <li><a href="/Analityk/HistTransp">Historia Transportu</a></li>
+                    <li><a href="/Analityk/intPrac">Interwencje Pracownik</a></li>
+                    <li><a href="/Analityk/składPrac">Statystyka Skład</a></li>
+                    <li><a href="/Analityk/pracPrac">Dziennik Pracy</a></li>
+                    <li><a href="/Analityk/IlePax">Dziennik Pacjentów</a></li>
+                    <li><a href="/Analityk/HistZgłoszeń">Ewidencja Zgłoszeń</a></li>
+                    <li><a href="/Analityk/SPRM">Statystyka PRM</a></li>
+                }
+
+            </ul>
+        </div>
+    </nav>
+
+</body>
+</html>

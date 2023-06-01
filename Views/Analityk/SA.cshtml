@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.VDaneWyjazdSexualAbuse>
+
+@{
+    ViewData["Title"] = "Lista interwencji na tle seksualnym";
+}
+
+<h1>Analiza zdarzeń</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInterwencji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JednostkaChorobowa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumerZałogi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pacjent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SzpitalDocelowy)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(odelItem => item.DataInterwencji)
+                </th>
+                <th>
+                    @Html.DisplayFor(odelItem => item.JednostkaChorobowa)
+                </th>
+                <th>
+                    @Html.DisplayFor(odelItem => item.NumerZałogi)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Pacjent)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.SzpitalDocelowy)
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>

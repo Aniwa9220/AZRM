@@ -1,0 +1,81 @@
+﻿@model AZRM2023v1.Models.SWD2.Skład
+
+
+
+@{
+    ViewData["Title"] = "Dodaj Skład";
+}
+
+<h1>Dodaj Skład</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddSkład" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Idskład" class="control-label"></label>
+                <input asp-for="Idskład" class=" form-control" />
+                <span asp-validation-for="Idskład" class="text-danger"></span>
+            </div>
+           
+                <div class="form-group">
+                    <label asp-for="Idpracownika" class="control-label"></label>
+                    <select asp-for="Idpracownika" class="form-control">
+                @foreach (var item1 in Model.Squadcrew)
+                       {
+
+
+                        <option value="@item1.Idpracownika">@{
+                                switch (@item1.Idfunkcji)
+                                {
+                                    case 1:
+                                        <text>Kierowca</text>
+                                        break;
+                                    case 2:
+                                        <text>Lekarz</text>
+                                        break;
+                                    case 3: 
+                                        <text>Ratownik</text>
+                                        break;
+                                    case 4:
+                                        <text>Kadra AZRM</text>
+                                        break;
+                                }
+                                        
+                                }
+                                
+                                    : @item1.Name
+                            </option>
+
+
+                    }             
+                </select>
+                    <span asp-validation-for="Idpracownika" class="text-danger"></span>
+                </div>
+           
+            <div class="form-group">
+                <label asp-for="Typskładu" class="control-label"></label>
+                <input asp-for="Typskładu" class="form-control" />
+                <span asp-validation-for="Typskładu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dzieńpracy" class="control-label"></label>
+                <input asp-for="Dzieńpracy" class=" form-control" />
+                <span asp-validation-for="Dzieńpracy" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Utwórz ZRM" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="IndexSklad">Wróć do Listy Składów</a>
+</div>
+
+

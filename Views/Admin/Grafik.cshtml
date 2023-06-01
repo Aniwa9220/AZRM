@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.Grafik>
+
+@{
+    ViewData["Title"] = "Grafik";
+}
+
+<h1>Grafik zespołów AZRM</h1>
+
+<p>
+    <a asp-action="AddGrafik">Dodaj do Grafiku</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dzieńdyżuru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idskład)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zmiana)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dzieńdyżuru)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idskład)
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zmiana)
+                </td>
+                <td>
+                <td>
+                    <a asp-action="EditGrafik" asp-route-id="@item.Lp" class="btn btn-info">Edytuj</a> |
+                    <a asp-action="RemoveGrafik" asp-route-id="@item.Lp" class="btn btn-danger">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

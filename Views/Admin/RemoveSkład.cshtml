@@ -1,0 +1,51 @@
+﻿@model AZRM2023v1.Models.SWD2.Skład
+
+@{
+    ViewData["Title"] = "RemoveSkład";
+}
+
+<h1>Usuń Dany element Planu Składów</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Porzadkowa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Porzadkowa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Idskład)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Idskład)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dzieńpracy)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dzieńpracy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Typskładu)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Typskładu)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Idpracownika)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Idpracownika)
+        </dd>
+    </dl>
+    <form asp-action="RemoveConfirmSkład" method="post" asp-route-id="@Model.Porzadkowa">
+        <button type="submit" class="btn alert-danger">Potwierdź Usunięcie </button>
+    </form>
+</div>
+<div>
+
+    <a asp-action="IndexSklad">Wróć do Listy</a>
+</div>

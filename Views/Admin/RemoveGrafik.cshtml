@@ -1,0 +1,48 @@
+﻿@model AZRM2023v1.Models.SWD2.Grafik
+
+@{
+    ViewData["Title"] = "RemoveGrafik";
+}
+
+<h1>Usuń Dany element grafiku</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Idskład)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Idskład)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Dzieńdyżuru)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Dzieńdyżuru)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Zmiana)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Zmiana)
+        </dd>
+     
+    </dl>
+   <form asp-action="RemoveConfirmGrafik" method="post" asp-route-id="@Model.Lp">
+        <input type="hidden" value="@Model.Lp" />
+        <input type="hidden" value="@Model.Status" />
+        <button type="submit" class="btn alert-danger">Potwierdź Usunięcie </button>
+    </form>
+</div>
+<div>
+
+    <a asp-action="Grafik">Wróć do Grafiku</a>
+</div>

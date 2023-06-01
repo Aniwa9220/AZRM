@@ -1,0 +1,51 @@
+﻿@model AZRM2023v1.Models.Domain.ApplicationUser
+
+@{
+    ViewData["Title"] = "DetailsPracownik";
+}
+
+<h1>Szczegóły dot. Pracownika</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mail)
+        </dd>
+         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Idfunkcji)
+           
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Idfunkcji)
+        </dd>
+       <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rola)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rola)
+        </dd>
+      
+
+    </dl>
+</div>
+<div>
+    <a asp-action="UpdatePracownik" asp-route-id="@Model.Id">Edytuj Pracownika</a>
+    <a asp-action="ListaPracownikow">Wróć do Listy</a>
+</div>

@@ -1,0 +1,65 @@
+﻿@model AZRM2023v1.Models.Domain.ApplicationUser
+
+
+@{
+    ViewData["Title"] = "EditPracownik";
+    
+}
+
+<h1>Edytuj Konto Pracownika</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditPracownik" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Mail" class="control-label"></label>
+                <input asp-for="Mail" class="form-control" />
+                <span asp-validation-for="Mail" class="text-danger"></span>
+            </div>
+            <divclass class="form-group">
+             <label asp-for="Rola">Wybierz Rolę AZRM:</label>
+                    <select option="Rola AZRM" asp-for="Rola">
+                            <option value="User">User</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Analityk">Analityk</option>
+                            <option value="Rejestrator">Rejestrator</option>
+                            <option value="Kierownik ZRM">Kierownik ZRM</option>
+                            <option value="Dyspozytor">Dyspozytor</option>          
+                    </select>
+            </divclass>
+            <div class="form-group">
+            </div>
+            <divclass class="form-group">
+                <label for="IDfunkcji">Wybierz funkcję w zespole:</label>
+                <select option="Funkcja" asp-for="Idfunkcji">
+                    <option value="1">Kierowca</option>
+                    <option value="2">Lekarz</option>
+                    <option value="3">Ratownik</option>
+                    <option value="0">Kadra AZRM</option>
+                    <option value="4">Wybierz funkcje</option>
+                </select>
+            </divclass>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ListaPracownikow">Wróć do Listy</a>
+</div>
+

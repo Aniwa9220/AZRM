@@ -1,0 +1,75 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.Skład>
+
+@{
+    ViewData["Title"] = "Index Skladów AZRM";
+}
+
+<h1>Lista Składów AZRM</h1>
+
+<p>
+    <a asp-action="AddSkład">Dodaj Skład</a>
+</p>
+<table class="table">
+    
+
+    <form asp-action="IndexSklad" method="post">
+            <div class="form-group">
+                <label for="SkladFiltering_GetSklad" class="control-label"></label>
+                <input type="text" id="t" name="t" />
+            </div>
+            <input type="submit" value="Znajdź Skład" class="btn btn-primary" />
+
+
+
+        
+
+
+    <thead>
+        <tr>
+            <th>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Idskład)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.Idpracownika)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model =>model.Dzieńpracy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model =>model.Typskładu)
+            </th>
+       
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idskład)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idpracownika)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dzieńpracy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Typskładu)
+                </td>
+       
+                <td>
+                 <a asp-action="EditSkład" asp-route-id="@item.Porzadkowa" class="btn btn-sm btn-info">Edytuj</a>
+                 
+                 <a asp-action="RemoveSkład" asp-route-id="@item.Porzadkowa" class="btn btn-sm btn-info">Usuń</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+    </form>
+</table>

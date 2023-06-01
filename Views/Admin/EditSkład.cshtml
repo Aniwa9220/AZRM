@@ -1,0 +1,47 @@
+﻿@model AZRM2023v1.Models.SWD2.Skład
+
+@{
+    ViewData["Title"] = "EditSkład";
+
+}
+
+<h1>Edytuj Skład</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditSkład" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Idskład" class="control-label"></label>
+                <input asp-for="Idskład" class="form-control" />
+                <span asp-validation-for="Idskład" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idpracownika" class="control-label"></label>
+                <input asp-for="Idpracownika" class="form-control" />
+                <span asp-validation-for="Idpracownika" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Typskładu" class="control-label"></label>
+                <input asp-for="Typskładu" class="form-control" />
+                <span asp-validation-for="Typskładu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dzieńpracy" class="control-label"></label>
+                <input asp-for="Dzieńpracy" class="form-control" />
+                <span asp-validation-for="Dzieńpracy" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="IndexSklad">Wróć do Listy</a>
+</div>
+

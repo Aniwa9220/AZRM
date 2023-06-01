@@ -1,0 +1,48 @@
+﻿@model AZRM2023v1.Models.SWD2.Grafik
+
+@{
+    ViewData["Title"] = "EditGrafik";
+
+}
+
+<h1>Edytuj grafik</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditGrafik" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Lp" />
+            <input type="hidden" asp-for="Status" />
+              <div class="form-group">
+                <label asp-for="Lp" class="control-label"></label>
+                <input asp-for="Lp" class="form-control" />
+                <span asp-validation-for="Lp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idskład" class="control-label"></label>
+                <input asp-for="Idskład" class="form-control" />
+                <span asp-validation-for="Idskład" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Dzieńdyżuru" class="control-label"></label>
+                <input asp-for="Dzieńdyżuru" class="form-control" />
+                <span asp-validation-for="Dzieńdyżuru" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zmiana" class="control-label"></label>
+                <input asp-for="Zmiana" class="form-control" />
+                <span asp-validation-for="Zmiana" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Grafik">Wróć do Listy</a>
+</div>
+

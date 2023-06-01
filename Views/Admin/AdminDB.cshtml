@@ -1,0 +1,50 @@
+﻿@model AZRM2023v1.Repositories.Implementation.AdminManager;
+
+
+@{
+    ViewBag.Title = "Lista backupow AZRM ";
+
+}
+
+<h2>Lista dostępnych backupów</h2>
+
+<ul>
+    <div class="container">
+        <label for="LoadBackUp">Wybierz źródło: </label>
+        <form asp-action="LoadBackUp" method="post">
+            <div class="form-group">
+                <label asp-for="wybranyBak" class="control-label"></label>
+                <select asp-for="wybranyBak" class="form-control">
+                    @foreach (var item1 in Model.p2)
+                    {
+
+
+                        <option value="@item1">
+                            @item1
+
+                        </option>
+
+
+                    }
+                </select>
+                <span asp-validation-for="wybranyBak" class="text-danger"></span>
+           
+
+            </div class="form-group">
+        <button type="submit" class="btn alert-danger">Załadowanie BD </button>
+    </form>
+     <label for="Backup">BackUp AZRM DB</label>
+    <form asp-action="Backup">        
+        <button type="submit" class="default">Wykonaj Backup</button>
+    </form>
+
+     <label for="ImportSCVFile">ICD10 Biblioteka</label>
+        <ul class="nav navbar-nav">
+            <li><a href="/ImportIcd10/Index">ImportICD10</a></li>
+            </ul>
+    </div>
+</ul>
+
+
+
+

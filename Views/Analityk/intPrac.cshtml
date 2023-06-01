@@ -1,0 +1,40 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.VIlInterwencjiPracownika>
+
+@{
+    ViewData["Title"] = "ilość interwencji na danego pracownika";
+}
+
+<h1>Wykonano interwencji</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IleInterwencji)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pracownik)
+            </th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+            <th>
+                @Html.DisplayFor(modelitem => item.Id)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.IleInterwencji)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.Pracownik)
+            </th>
+            </tr>
+        }
+    </tbody>
+</table>

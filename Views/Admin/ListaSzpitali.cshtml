@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AZRM2023v1.Models.SWD2.Szpital>
+
+@{
+    ViewData["Title"] = "Lista Szpitali";
+}
+
+<h1>Lista Szpitali współpracujacych</h1>
+
+<p>
+    <a asp-action="AddSzpital">Dodaj Szpital</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nazwa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zgłoszenies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idszpitala)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nazwa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adres)
+                   
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zgłoszenies)
+                </td>
+                <td>
+                  @Html.DisplayFor(modelItem => item.Idszpitala)
+                </td>
+                <td>
+                    <a asp-action="EditSzpital" asp-route-id="@item.Idszpitala" class="btn btn-info">Edytuj</a> |
+                    <a asp-action="DetailsSzpital" asp-route-id="@item.Idszpitala">Szczegóły</a> |
+                    <a asp-action="RemoveSzpital" asp-route-id="@item.Idszpitala" class="btn btn-danger">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
